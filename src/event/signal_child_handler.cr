@@ -40,8 +40,8 @@ class Event::SignalChildHandler
     end
   end
 
+  # BUG: needs mutexes with threads
   private def send_pending(pid, status)
-    # BUG: needs mutexes with threads
     if chan = @waiting[pid]?
       chan.send status
       @waiting.delete pid
@@ -50,10 +50,11 @@ class Event::SignalChildHandler
     end
   end
 
-  # returns a future that sends a Process::Status or raises after forking.
+  # Returns a future that sends a Process::Status or raises after forking.
+  #
+  # BUG: needs mutexes with threads
   def waitpid(pid : LibC::PidT)
     chan = ChanType.new(1)
-    # BUG: needs mutexes with threads
     if status = @pending[pid]?
       chan.send status
       @pending.delete pid

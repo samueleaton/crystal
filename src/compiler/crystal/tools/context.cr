@@ -145,7 +145,7 @@ module Crystal
           process_type(instanced_types) do
             type_vars.each.zip(type_vars_args.each).each do |e|
               generic_arg_name, generic_arg_type = e
-              # TODO handle generic_arg_type that are not types but ASTNode
+              # TODO: handle generic_arg_type that are not types but ASTNode
               add_context generic_arg_name, generic_arg_type if generic_arg_type.is_a?(Type)
             end
           end
@@ -177,7 +177,7 @@ module Crystal
           result.node.accept(RechableVisitor.new(self))
         end
 
-        # TODO should apply only if user is really in some of the nodes of the main expressions
+        # TODO: should apply only if user is really in some of the nodes of the main expressions
         @contexts << @context unless @context.empty?
       end
 
@@ -242,11 +242,11 @@ module Crystal
       contains_target(node)
     end
 
-    # TODO handle type filters of case statements
+    # TODO: handle type filters of case statements
 
     def visit(node : If)
       if contains_target(node)
-        # TODO handle conditions in expressions
+        # TODO: handle conditions in expressions
         case cond = node.cond
         when Var
           filters = TypeFilters.truthy(cond)

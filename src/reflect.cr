@@ -1,6 +1,6 @@
 # :nodoc:
 struct Reflect(X)
-  # Note: This type might be removed.
+  # NOTE: This type might be removed.
   #
   # For now it's just a way to implement `Enumerable#sum` in a way that the
   # initial value given to it has the type of the first type in the union,

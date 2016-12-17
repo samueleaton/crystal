@@ -1,5 +1,5 @@
 # Markdown library parses Markdown text. It supports rendering to HTML text.
-# Note: This library is in its early stage. Many features are still in development.
+# NOTE: This library is in its early stage. Many features are still in development.
 #
 # Usage:
 #

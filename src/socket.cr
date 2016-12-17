@@ -205,7 +205,7 @@ class Socket < IO::FileDescriptor
     ret.l_onoff == 0 ? nil : ret.l_linger
   end
 
-  # WARNING: The behavior of SO_LINGER is platform specific.  Bad things may happen especially with nonblocking sockets.
+  # NOTE: The behavior of SO_LINGER is platform specific.  Bad things may happen especially with nonblocking sockets.
   # See https://www.nybek.com/blog/2015/04/29/so_linger-on-non-blocking-sockets/ for more information.
   #
   # nil => disable SO_LINGER

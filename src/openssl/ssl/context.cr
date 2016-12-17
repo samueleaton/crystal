@@ -244,7 +244,7 @@ abstract class OpenSSL::SSL::Context
     OpenSSL::SSL::Options.new LibSSL.ssl_ctx_ctrl(@handle, LibSSL::SSL_CTRL_OPTIONS, 0, nil)
   end
 
-  # TODO (formatetr) enclose the next doc in ```...```
+  # TODO: (formatetr) enclose the next doc in ```...```
 
   # Adds options to the TLS context.
   #
